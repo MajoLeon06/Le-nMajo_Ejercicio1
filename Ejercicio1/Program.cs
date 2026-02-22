@@ -41,5 +41,69 @@ if (edad>0 && presion>0 && (dolor>=0 && dolor<=10) && saturacion>0 && temperatur
                 }
                 break;
             }
+        case 2:
+            {
+                if (edad < 18)
+                {
+                    Console.WriteLine("Referir a pediatría");
+                }
+                else
+                    {
+                    Console.WriteLine("Consulta normal");
+                }
+                break;
+            }
+        case 3:
+            {
+                if (edad<12 && temperatura>=38)
+                {
+                    Console.WriteLine("Prioridad 1");
+                    Console.WriteLine("Consulta urgente");
+                }
+                else if (saturacion<90)
+                {
+                    Console.WriteLine("Prioridad 1, considerado emergencia");
+                }
+                else if (dolor>=8)
+                {
+                    Console.WriteLine("Prioridad 2");
+                    Console.WriteLine("Consulta");
+                }
+                else
+                {
+                    Console.WriteLine("Consulta normal");
+                }
+                break;
+            }
+        case 4:
+            {
+                Console.WriteLine("Realizar radiografía");
+                Console.WriteLine("¿Anormalidad encontrada? 1:Si 2:No");
+                int sino = int.Parse(Console.ReadLine());
+                if (dolor>=8 && sino==1)
+                {
+                    Console.WriteLine("Prioridad 1");
+                    Console.WriteLine("Consulta urgente");
+                    Console.WriteLine("Fractura");
+                }
+                else if (dolor<=8 && sino==1)
+                {
+                    Console.WriteLine("Prioridad 2");
+                    Console.WriteLine("Consulta");
+                    Console.WriteLine("Posible fractura");
+                }
+                else if (dolor<8 && sino==2)
+                {
+                    Console.WriteLine("Prioridad 3");
+                    Console.WriteLine("Consulta");
+                    Console.WriteLine("Observación");
+                }
+                break;
+            }
+        default:
+            {
+                Console.WriteLine("Ingrese opción nuevamente");
+                break;
+            }
     }
 }
