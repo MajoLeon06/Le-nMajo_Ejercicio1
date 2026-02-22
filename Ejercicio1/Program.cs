@@ -13,3 +13,33 @@ Console.WriteLine("Ingresar nivel de dolor (0-10)");
 int dolor = int.Parse(Console.ReadLine());
 Console.WriteLine("Ingresar presión sistólica");
 double presion = double.Parse(Console.ReadLine());
+Console.WriteLine("Ingresar edad:");
+double edad = double.Parse(Console.ReadLine());
+if (edad>0 && presion>0 && (dolor>=0 && dolor<=10) && saturacion>0 && temperatura>0)
+{
+    switch(option)
+    {
+        case 1:
+            {
+                if (saturacion<90)
+                {
+                    Console.WriteLine("Prioridad 1");
+                    Console.WriteLine("Poner oxígeno");
+                }
+                else if (temperatura>=39 && dolor>=8)
+                {
+                    Console.WriteLine("Prioridad 2");
+                    Console.WriteLine("Realizar exámenes");
+                }
+                else if (edad>=50 && dolor>=8 && saturacion<80)
+                {
+                    Console.WriteLine("Atención inmediata");
+                }
+                else { 
+                    Console.WriteLine("Prioridad 3");
+                    Console.WriteLine("Consulta normal");
+                }
+                break;
+            }
+    }
+}
