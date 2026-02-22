@@ -107,3 +107,7 @@ if (edad>0 && presion>0 && (dolor>=0 && dolor<=10) && saturacion>0 && temperatur
             }
     }
 }
+else
+{
+    Console.WriteLine("Datos no válidos");
+}
